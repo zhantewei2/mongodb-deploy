@@ -1,11 +1,11 @@
 services:
   mongo:
-    container_name: mongodb
+    container_name: mongodb-01
     image: mongo:6.0.4
     ports:
       - "27017:27017"
     volumes:
-      - /disk2/mongo:/var/lib/mongo
+      - /home/mongodb:/var/lib/mongo
     logging:
       driver: "json-file"
       options:
@@ -15,5 +15,6 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: scrmpwd123
+      TZ: "Asia/Shanghai"
 
     command: --config /var/lib/mongo/mongod.conf
