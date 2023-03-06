@@ -1,0 +1,25 @@
+services:
+  mongo:
+    container_name: mongodb-arbiter
+    image: mongo:6.0.4
+    ports:
+      - "27017:27020"
+    volumes:
+      - /home/mongodb:/var/lib/mongo
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "2048k"
+        max-file: 10
+    networks:
+      - scrm-net
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: scrmpwd123
+      TZ: "Asia/Shanghai"
+
+    command: --config /var/lib/mongo/arbiter/mongod.conf
+
+networks:
+  scrm-net:
+    external: true
