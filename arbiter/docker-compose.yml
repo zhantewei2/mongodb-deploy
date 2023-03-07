@@ -1,9 +1,11 @@
+version: '3'
+
 services:
   mongo:
     container_name: mongodb-arbiter
     image: mongo:6.0.4
     ports:
-      - "27017:27020"
+      - "27020:27020"
     volumes:
       - /home/mongodb:/var/lib/mongo
     logging:

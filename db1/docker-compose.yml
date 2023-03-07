@@ -1,3 +1,5 @@
+version: '3'
+
 services:
   mongo:
     container_name: mongodb-01
@@ -11,6 +13,9 @@ services:
       options:
         max-size: "2048k"
         max-file: 10
+    deploy:
+      mode: replicated
+      replicas: 2
     networks:
       - scrm-net
     environment:
