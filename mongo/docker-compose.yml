@@ -1,0 +1,25 @@
+services:
+  mongo:
+    container_name: mongodb_shard1_0
+    image: mongo:6.0.4
+    ports:
+      - "27017:27017"
+    volumes:
+      - /disk2/mongo:/var/lib/mongo
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "2048k"
+        max-file: 10
+
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: scrmpwd123
+
+    command: --config /var/lib/mongo/mongod.conf
+    networks:
+      - elk-net
+
+networks:
+  elk-net:
+    external: true
