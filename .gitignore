@@ -1,0 +1,6 @@
+**/data/
+deploy/
+stat/
+**/log/
+node_modules/
+.idea/
