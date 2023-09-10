@@ -1,11 +1,11 @@
 services:
-  mongo:
+  mongodb_shard2_1:
     container_name: mongodb_shard2_1
     image: mongo:6.0.4
     ports:
-      - "27021:27017"
+      - "27028:27017"
     volumes:
-      - /disk2/mongo2-1:/var/lib/mongo
+      - /home/mongodb-cluster/mongo2-1:/var/lib/mongo
     logging:
       driver: "json-file"
       options:
@@ -18,7 +18,7 @@ services:
 
     command: --config /var/lib/mongo/mongod.conf
     networks:
-      - elk-net
+      - scrm-net
 networks:
-  elk-net:
+  scrm-net:
     external: true
