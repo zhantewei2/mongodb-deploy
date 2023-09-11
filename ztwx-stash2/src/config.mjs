@@ -8,6 +8,6 @@ export default {
     username: "scrm",
     password: "scrmpwd123"
   },
-  mongodbUrl: "mongodb://scrm:scrmpwd123@mongos:27017/user_center?authSource=admin",
+  mongodbUrl: "mongodb://root:scrmpwd123@mongos:27017/user_center?authSource=admin",
   mongodbDb: "user_center"
 }
