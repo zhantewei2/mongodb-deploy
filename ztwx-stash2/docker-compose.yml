@@ -1,0 +1,21 @@
+services:
+  bhstash2:
+    container_name: bhstash2
+    image: bhstash:1.0.0
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /home/mongodb-cluster/ztwx-stash/src:/home/src
+      - /home/mongodb-cluster/ztwx-stash/package.json:/home/package.json
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "2048k"
+        max-file: 10
+    command: src/ztwx-kafka.mjs
+    networks:
+      - scrm-net
+networks:
+  scrm-net:
+    external: true
