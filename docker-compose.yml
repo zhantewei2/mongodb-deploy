@@ -5,7 +5,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - /disk2/mongo:/var/lib/mongo
+      - /home/mongodb:/var/lib/mongo
     logging:
       driver: "json-file"
       options:
