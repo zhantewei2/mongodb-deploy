@@ -14,6 +14,6 @@ services:
 
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: scrmpwd123
+      MONGO_INITDB_ROOT_PASSWORD: xxxxx
 
     command: --config /var/lib/mongo/mongod.conf
